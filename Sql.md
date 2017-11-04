@@ -24,7 +24,7 @@
 ## UPDATE FROM SELECT
 
 ```js
-   UPDATE
+UPDATE
     Table_A
 SET
     Table_A.col1 = Table_B.col1,
@@ -48,7 +48,7 @@ WHERE
         DROP COLUMN column_name;
     
     ALTER TABLE table_name
-    Alter COLUMN column_name  int;
+        ALTER COLUMN column_name  int;
 ```
 
 ## IF EXISTS
@@ -137,12 +137,12 @@ WHERE
 ## ARITHABORT Разные планы выполнения в vs и в mms
 
 ```sql
- declare @value sql_variant
+declare @value sql_variant
 
 select @value = SESSIONPROPERTY('ARITHABORT') 
 if @value <> 0 
 begin 
-	PRINT('asdf')
+	PRINT('print something')
 	USE master 
 	ALTER DATABASE [table_name] SET ARITHABORT OFF WITH NO_WAIT 
 	use [table_name]
@@ -205,7 +205,7 @@ exec GetContractCartPrices
     order by code
 ```
 
-## wrong timezone in postgress
+## Wrong timezone in postgress
 
 ```sql
     CREATE TABLE tz (
@@ -220,8 +220,8 @@ exec GetContractCartPrices
     SELECT * FROM tz;
 ```
 
-## pg restore from sql
+## Pg restore from sql
 
 ```s
- psql -U postgres -d address_test_prod -1 -f D:\Work\SQL\pg_backups\prod\Addresses.sql
+ psql -U postgres -d address_test_prod -1 -f D:\..path\Addresses.sql
 ```
